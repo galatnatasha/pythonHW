@@ -40,12 +40,12 @@
     
 # print(my_list)
 
-# №3 Задайте список из k чисел последовательности (1 + 1\k)^k и выведите на экран их сумму.
+# №3 Задайте список из n чисел последовательности (1 + 1\n)^n и выведите на экран их сумму.
 
-# k = int(input('Введите число: '))
+# n = int(input('Введите число: '))
 # my_list = []
 
-# for i in range(1, k + 1):
+# for i in range(1, n + 1):
 #     num = (1 + 1 / i) ** i
 #     my_list.append(num)
 #     i += 1
@@ -53,30 +53,45 @@
 
 # print(sum(my_list))
 
-# №4 Задайте список из N элементов, заполненных числами из промежутка [-N, N].
+# №4 Задайте список из N элементов, заполненных числами из промежутка [-N, N]. 
+# Найдите произведение элементов на указанных позициях. 
+# Позиции вводятся одной строкой через пробел.
 
-# N = int(input('Введите число: '))
-# my_list = []
+N = int(input('Введите число: '))
+my_list = []
 
-# import random
-# for i in range (N):
-#     my_list.append(random.randint(-N, N))
-#     i += 1
+import random
+for i in range (N):
+    my_list.append(random.randint(-N, N+1))
+    i += 1
 
-# print(my_list)
+print(my_list)
 
-# # Найдите произведение элементов на указанных пользователем через пробел позициях.
+# Найдите произведение элементов на указанных пользователем через пробел позициях.
 
-# n = input('Введите индексы элементов через пробел: ')
+n = input('Введите индексы элементов через пробел: ')
 
-# index_list = n.split(' ')
+index_list = n.split(' ')
 
-# mult = 1
-# for i in range(len(index_list)):
-#     mult *= my_list[int(index_list[i])]
-#     i += 1
+mult = 1
+i = 0
+chek = True
 
-# print(mult)
+while i < len(index_list):
+    if int(index_list[i]) > len(my_list):
+        print('Ошибка!')
+        chek = False
+        break
+    else:
+        i += 1
+    chek = True    
+
+if chek == True:
+    i = 0
+    while i < len(index_list):
+        mult *= my_list[int(index_list[i])]
+        i += 1
+    print(mult)
 
 # №6 Реализуйте алгоритм перемешивания списка.
 
