@@ -27,14 +27,16 @@
 #     new_list = []
 #     if len(list) % 2 == 0:
 #         for i in range(int(len(list) / 2)):
-#             new_list.append(int(list[i]) + int(list[-1 - i]))
+#             new_list.append(int(list[i]) * int(list[-1 - i]))
 #     else:
 #         for i in range(round(len(list) / 2) + 1):
-#             new_list.append(int(list[i]) + int(list[-1 - i]))
+#             new_list.append(int(list[i]) * int(list[-1 - i]))
 #     return new_list
 
 # list_1 = str(input('Введите числа через пробел: '))
+# print(list_1)
 # list_2 = list_1.split(' ')
+# print(list_2)
 
 # print(func_2(list_2))
 
@@ -74,10 +76,7 @@
 #     while num > 0:
 #         n = num % 2
 #         new_list.append(n)
-#         if num % 2 == 1:
-#             num = round((num - 1) / 2)
-#         else: 
-#             num = round(num / 2)
+#         num = num // 2
 #     new_list.reverse()
 #     return new_list
 
